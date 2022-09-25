@@ -2,10 +2,10 @@ package dggarchivermodel
 
 // Contains the data structure for the LiveNotify message
 type LiveNotify struct {
-	Live bool
+	Live bool `json:"live"`
 }
 
 // Contains the data structure for the LiveNotifyReply message
 type LiveNotifyReply struct {
-	Mute bool
+	Mute bool `json:"mute"`
 }
