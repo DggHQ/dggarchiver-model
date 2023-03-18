@@ -10,9 +10,11 @@ type LiveNotifyReply struct {
 	Mute bool `json:"mute"`
 }
 
-// Contains the data structure for the YouTube VOD/livestream
-type YTVod struct {
+// Contains the data structure for the any VOD/livestream
+type VOD struct {
+	Platform      string `json:"platform"`
 	ID            string `json:"id"`
+	PlaybackURL   string `json:"playbackurl"`
 	PubTime       string `json:"pubtime"`
 	Title         string `json:"title"`
 	StartTime     string `json:"starttime"`
