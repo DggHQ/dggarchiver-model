@@ -10,7 +10,7 @@ type LiveNotifyReply struct {
 	Mute bool `json:"mute"`
 }
 
-// Contains the data structure for the any VOD/livestream
+// Contains the data structure for any VOD/livestream
 type VOD struct {
 	Platform      string `json:"platform"`
 	ID            string `json:"id"`
@@ -23,4 +23,14 @@ type VOD struct {
 	ThumbnailPath string `json:"thumbnailpath"`
 	Path          string `json:"path"`
 	Duration      int    `json:"duration"`
+}
+
+// Contains the data structure to add the VOD into the SQLite DB
+type UploadedVOD struct {
+	VOD
+	Claim              string
+	LBRYName           string
+	LBRYChannel        string
+	LBRYNormalizedName string
+	LBRYPermanentURL   string
 }
