@@ -13,6 +13,7 @@ type LiveNotifyReply struct {
 // Contains the data structure for any VOD/livestream
 type VOD struct {
 	Platform      string `json:"platform"`
+	Downloader    string `json:"downloader"`
 	ID            string `json:"id"`
 	PlaybackURL   string `json:"playbackurl"`
 	PubTime       string `json:"pubtime"`
