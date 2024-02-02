@@ -1,5 +1,7 @@
 package dggarchivermodel
 
+import "encoding/json"
+
 // Contains the data structure for the LiveNotify message
 type LiveNotify struct {
 	Live bool `json:"live"`
@@ -14,7 +16,7 @@ type LiveNotifyReply struct {
 type VOD struct {
 	Platform      string `json:"platform"`
 	Downloader    string `json:"downloader"`
-	ID            string `json:"id"`
+	ID            string `json:"id" gorm:"index:idx_id_hosting,unique"`
 	PlaybackURL   string `json:"playbackurl"`
 	PubTime       string `json:"pubtime"`
 	Title         string `json:"title"`
@@ -28,10 +30,11 @@ type VOD struct {
 
 // Contains the data structure to add the VOD into the SQLite DB
 type UploadedVOD struct {
+	HostingPlatform string `gorm:"index:idx_id_hosting,unique"`
 	VOD
-	Claim              string
-	LBRYName           string
-	LBRYChannel        string
-	LBRYNormalizedName string
-	LBRYPermanentURL   string
+	HostingName           string
+	HostingChannel        string
+	HostingNormalizedName string
+	HostingURL            string
+	HostingAdditionalInfo json.RawMessage
 }
