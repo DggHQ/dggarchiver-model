@@ -26,6 +26,7 @@ type VOD struct {
 	ThumbnailPath string `json:"thumbnailpath"`
 	Path          string `json:"path"`
 	Duration      int    `json:"duration"`
+	Visibility    int    `json:"visibility"` // 0 is public, 1 is unlisted, 2 is private
 }
 
 // Contains the data structure to add the VOD into the SQLite DB
