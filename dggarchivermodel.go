@@ -18,19 +18,21 @@ type LiveNotifyReply struct {
 
 // Contains the data structure for any VOD/livestream
 type VOD struct {
-	Platform      string `json:"platform" gorm:"index:idx_vid_platform_hostplatform,unique"`
-	Downloader    string `json:"downloader"`
-	VID           string `json:"id" gorm:"index:idx_vid_platform_hostplatform,unique"`
-	PlaybackURL   string `json:"playbackurl"`
-	PubTime       string `json:"pubtime"`
-	Title         string `json:"title"`
-	StartTime     string `json:"starttime"`
-	EndTime       string `json:"endtime"`
-	Thumbnail     string `json:"thumbnail"`
-	ThumbnailPath string `json:"thumbnailpath"`
-	Path          string `json:"path"`
-	Duration      int    `json:"duration"`
-	Visibility    int    `json:"visibility"` // 0 is public, 1 is unlisted, 2 is private
+	Platform      string   `json:"platform" gorm:"index:idx_vid_platform_hostplatform,unique"`
+	Downloader    string   `json:"downloader"`
+	VID           string   `json:"id" gorm:"index:idx_vid_platform_hostplatform,unique"`
+	PlaybackURL   string   `json:"playbackurl"`
+	PubTime       string   `json:"pubtime"`
+	Title         string   `json:"title"`
+	StartTime     string   `json:"starttime"`
+	EndTime       string   `json:"endtime"`
+	Thumbnail     string   `json:"thumbnail"`
+	ThumbnailPath string   `json:"thumbnailpath"`
+	Path          string   `json:"path"`
+	Duration      int      `json:"duration"`
+	Visibility    int      `json:"visibility"` // 0 is public, 1 is unlisted, 2 is private
+	Quality       string   `json:"quality"`
+	Tags          []string `json:"tags"`
 }
 
 // Contains the data structure to add the VOD into the SQLite DB
