@@ -57,6 +57,7 @@ type VOD struct {
 	Visibility    int    `json:"visibility"` // 0 is public, 1 is unlisted, 2 is private
 	Quality       string `json:"quality"`
 	Tags          Tags   `json:"tags" gorm:"type:string"`
+	WorkerProxy   string `json:"worker_proxy" gorm:"-"`
 }
 
 // Contains the data structure to add the VOD into the SQLite DB
